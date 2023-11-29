@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <NuxtWelcome />
+  <p>
+    sport notes site
+  </p>
 </template>
 
 <style scoped>
