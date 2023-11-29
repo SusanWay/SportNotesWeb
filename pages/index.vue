@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { useUserStore } from '~/stores/user'
 
+const userStore = useUserStore()
+
+onMounted(
+  userStore.getUser,
+)
 </script>
 
 <template>
-  <p>
-    sport notes site
-  </p>
+  <pre class="my-80 text-center">
+    {{ userStore.user }}
+  </pre>
 </template>
 
 <style scoped>
