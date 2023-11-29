@@ -5,10 +5,5 @@ export default <Partial<Config>>{
     hoverOnlyWhenSupported: true,
   },
   theme: {
-    extend: {
-      gridTemplateColumns: {
-        header: '1fr auto 1fr',
-      },
-    },
   },
 }

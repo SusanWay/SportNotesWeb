@@ -15,7 +15,9 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "pnpm": "^8.11.0"
+    "@pinia/nuxt": "^0.5.1",
+    "pnpm": "^8.11.0",
+    "vue": "^3.3.9"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.42.1",

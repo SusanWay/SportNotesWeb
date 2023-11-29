@@ -2,6 +2,7 @@
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
+  ssr: true,
   app: {
     head: {
       charset: 'utf-8',
@@ -12,9 +13,13 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
     '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
   ],
   eslint: {
     exclude: ['**/node_modules/**', '**/dist/**', '**/assets/**'],
+  },
+  pinia: {
+    storesDirs: ['./stores/**'],
   },
   vite: {
     plugins: [
