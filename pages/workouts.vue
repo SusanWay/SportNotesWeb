@@ -49,15 +49,15 @@ const workoutList = [
 </script>
 
 <template>
-  <div class="px-4">
+  <div class="px-4 py-10">
     <!-- Кнопка добавление тренировки -->
-    <div class="my-10 flex px-5">
+    <div class="flex px-5">
       <Button class="w-full">
         Добавить тренировку
       </Button>
     </div>
     <!-- Список тренировок -->
-    <div>
+    <div class="mt-10">
       <p class="text-center text-3xl font-bold text-white">
         Ваши тренировки
       </p>
