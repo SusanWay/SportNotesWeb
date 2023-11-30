@@ -8,7 +8,9 @@
     <p class="font-title text-xl font-extrabold">
       Name
     </p>
-    <Icon name="Menu/HomeAlt" size="40" class="ml-auto" />
+    <NuxtLink to="/" class="ml-auto">
+      <Icon name="Menu/HomeAlt" size="40" />
+    </NuxtLink>
   </header>
 </template>
 
