@@ -12,7 +12,10 @@ export default <Partial<Config>>{
         DEFAULT: '#2A3036',
         dark: '#1C2126',
       },
-      lime: '#E0FE10',
+      lime: {
+        DEFAULT: '#628009',
+        light: '#E0FE10',
+      },
     },
     fontFamily: {
       sans: ['Arvo', 'sans-serif'],
