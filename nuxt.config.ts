@@ -21,10 +21,10 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Roboto: {
-        wght: [400, 800],
+        wght: [300, 400, 800],
       },
       Arvo: {
-        wght: [400],
+        wght: [400, 700],
       },
     },
   },
