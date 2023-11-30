@@ -15,7 +15,7 @@ onMounted(
 </script>
 
 <template>
-  <div class="px-4 py-10">
+  <div class="px-4 py-5">
     <!-- Кнопка добавление тренировки -->
     <div class="flex px-5">
       <Button class="w-full">
