@@ -13,7 +13,7 @@
         <span class="absolute left-1/2 top-1/2 h-8 w-1 -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-black" />
       </div>
     </NuxtLink>
-    <NuxtLink to="/#">
+    <NuxtLink to="/nutrition">
       <Icon name="Menu/FoodOutLine" size="40" class="text-white" />
     </NuxtLink>
   </footer>
