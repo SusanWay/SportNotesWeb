@@ -18,6 +18,16 @@ export default defineNuxtConfig({
   eslint: {
     exclude: ['**/node_modules/**', '**/dist/**', '**/assets/**'],
   },
+  googleFonts: {
+    families: {
+      Roboto: {
+        wght: [400, 800],
+      },
+      Arvo: {
+        wght: [400],
+      },
+    },
+  },
   pinia: {
     storesDirs: ['./stores/**'],
   },

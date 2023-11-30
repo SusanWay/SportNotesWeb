@@ -14,5 +14,9 @@ export default <Partial<Config>>{
       },
       lime: '#E0FE10',
     },
+    fontFamily: {
+      sans: ['Arvo', 'sans-serif'],
+      title: ['Roboto', 'sans-serif'],
+    },
   },
 }
