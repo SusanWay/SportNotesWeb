@@ -9,7 +9,7 @@ onMounted(
 </script>
 
 <template>
-  <pre class="my-80 text-center">
+  <pre class="my-80 text-center text-white">
     {{ userStore.user }}
   </pre>
 </template>

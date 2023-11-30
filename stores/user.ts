@@ -11,8 +11,7 @@ export const useUserStore = defineStore('userStore', () => {
       user.value = { error: `Ошибка: ${response.status}` }
       return
     }
-    const result = await response.json()
-    user.value = result
+    user.value = await response.json()
   }
   return { user, getUser }
 })
