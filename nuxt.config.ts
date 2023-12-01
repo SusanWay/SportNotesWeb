@@ -9,11 +9,13 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
     },
   },
+  css: ['vue-final-modal/style.css'],
   modules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
+    '@vee-validate/nuxt',
   ],
   eslint: {
     exclude: ['**/node_modules/**', '**/dist/**', '**/assets/**'],
