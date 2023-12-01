@@ -14,8 +14,8 @@ export const useUserStore = defineStore('userStore', () => {
 
     user.value = await response.json()
   }
-  async function getWorkouts() {
-    const response = await fetch(`${apiURl}users`)
+  async function getWorkouts(interval: string) {
+    const response = await fetch(`${apiURl}workouts/1?interval=${interval}`)
     if (!response.ok)
       return
 

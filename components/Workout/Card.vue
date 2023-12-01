@@ -12,19 +12,19 @@ const isActive = ref(false)
       <div>
         <Icon name="Workout/DumbBell" size="52" class="text-lime-light" />
         <p class="text-xl font-bold text-white">
-          {{ name }}
+          {{ type }}
         </p>
       </div>
       <Icon name="NavArrow/Right" size="34" class="my-auto text-lime-light" :class="{ 'rotate-90': isActive }" />
     </div>
     <div v-if="isActive" class="flex flex-col">
-      <div v-for="(training, index) in trainingList" :key="index" class="flex flex-row items-center justify-between border-t border-white/25 py-3">
+      <div v-for="(training, index) in trainList" :key="index" class="flex flex-row items-center justify-between border-t border-white/25 py-3">
         <div class="text-center text-white">
           <p class="text-xl font-bold">
             {{ training.name }}
           </p>
           <p class="font-title font-light">
-            {{ training.repetition }} раз
+            {{ training.repetitions }} раз
           </p>
         </div>
         <p class="text-3xl font-bold text-lime-light">

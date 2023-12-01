@@ -10,7 +10,9 @@ const intervalList = [
 ]
 
 onMounted(
-  userStore.getWorkouts,
+  async () => {
+    await userStore.getWorkouts(selectedInterval.value)
+  },
 )
 </script>
 
@@ -21,7 +23,7 @@ onMounted(
       Мои тренировки
     </p>
     <div class="mt-2.5 grid grid-cols-3 gap-10 rounded-xl bg-gray px-4 py-2">
-      <button v-for="(interval, index) in intervalList" :key="index" class="rounded-lg border border-white/25 px-4 py-2 text-white" :class="{ 'border-0 bg-lime': selectedInterval === interval.interval }" @click="selectedInterval = interval.interval">
+      <button v-for="(interval, index) in intervalList" :key="index" class="rounded-lg border border-white/25 px-4 py-2 text-white" :class="{ 'border-0 bg-lime': selectedInterval === interval.interval }" @click="[selectedInterval = interval.interval, userStore.getWorkouts(selectedInterval)]">
         {{ interval.text }}
       </button>
     </div>

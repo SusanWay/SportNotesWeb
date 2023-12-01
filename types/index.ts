@@ -1,9 +1,9 @@
 export interface Workout {
-  name: string
-  trainingList: Training[]
+  type: string
+  trainList: Training[]
 }
 export interface Training {
   name: string
   approaches?: string
-  repetition?: string
+  repetitions?: string
 }
