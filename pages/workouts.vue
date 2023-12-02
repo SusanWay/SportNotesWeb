@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
+import { useWorkoutStore } from '~/stores/workout'
 
-const userStore = useUserStore()
+const workoutStore = useWorkoutStore()
 const selectedInterval = ref('month')
 const intervalList = [
   { interval: 'year', text: 'Год' },
@@ -11,7 +11,7 @@ const intervalList = [
 
 onMounted(
   async () => {
-    await userStore.getWorkouts(selectedInterval.value)
+    await workoutStore.getWorkouts(selectedInterval.value)
   },
 )
 </script>
@@ -23,13 +23,18 @@ onMounted(
       Мои тренировки
     </p>
     <div class="mt-2.5 grid grid-cols-3 gap-10 rounded-xl bg-gray px-4 py-2">
-      <button v-for="(interval, index) in intervalList" :key="index" class="rounded-lg border border-white/25 px-4 py-2 text-white" :class="{ 'border-0 bg-lime': selectedInterval === interval.interval }" @click="[selectedInterval = interval.interval, userStore.getWorkouts(selectedInterval)]">
+      <button
+        v-for="(interval, index) in intervalList"
+        :key="index"
+        class="rounded-lg border border-white/25 px-4 py-2 text-white"
+        :class="{ 'border-0 bg-lime': selectedInterval === interval.interval }"
+        @click="[selectedInterval = interval.interval, workoutStore.getWorkouts(selectedInterval)]">
         {{ interval.text }}
       </button>
     </div>
     <div class="mt-2.5 flex flex-col gap-5">
-      <WorkoutCard v-for="(workout, index) in userStore.workoutList" :key="index" v-bind="workout" />
-      <WorkoutEmptyState v-if="userStore.workoutList === null" class="mt-40" />
+      <WorkoutCard v-for="(workout, index) in workoutStore.workoutList" :key="index" v-bind="workout" />
+      <WorkoutEmptyState v-if="workoutStore.workoutList === null" class="mt-40" />
     </div>
   </div>
 </template>
