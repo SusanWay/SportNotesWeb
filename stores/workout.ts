@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { Workout, Training } from '~/types'
+import type { Training, Workout } from '~/types'
 
 export const useWorkoutStore = defineStore('workoutStore', () => {
   const workoutList = ref<Workout[] | null>(null)
@@ -12,7 +12,7 @@ export const useWorkoutStore = defineStore('workoutStore', () => {
 
     workoutList.value = await response.json()
   }
-  async function postWorkout(workoutType: string, trainList: Training[]){
+  async function postWorkout(workoutType: string, trainList: Training[]) {
     const body = { type: workoutType, trainList }
     const requestBody = JSON.stringify(body)
 

@@ -16,6 +16,7 @@ export default <Partial<Config>>{
         DEFAULT: '#628009',
         light: '#E0FE10',
       },
+      red: '#B8282B',
     },
     fontFamily: {
       sans: ['Arvo', 'sans-serif'],

@@ -45,7 +45,7 @@ function submitForm() {
     :click-to-close="false"
   >
     <div class="absolute inset-0 h-full overflow-auto px-5 py-7">
-      <button type="button" class="absolute left-6 top-6 z-10" @click="submitForm">
+      <button v-if="trainList.length" type="button" class="absolute left-6 top-6 z-10" @click="submitForm">
         <Icon name="Nav/Save" size="32" class="text-lime-light" />
       </button>
       <button type="button" class="absolute right-6 top-6 z-10" @click="vfm.close('addWorkout')">
@@ -67,14 +67,8 @@ function submitForm() {
         <p class="text-center text-2xl font-bold text-white">
           Упражнения
         </p>
-        <div v-for="(training, index) in trainList" :key="index" class="mt-2.5 flex flex-row items-center justify-between border-t border-white/25 p-3">
+        <div v-for="(training, index) in trainList" :key="index" class="mt-2.5 rounded-lg border border-white/25 p-3">
           <TrainFormElement v-bind="training" />
-          <button type="button" @click="removeTrain(index)">
-            <div class="relative flex h-7 w-7">
-              <span class="absolute top-1/3 h-0.5 w-full translate-y-1 rotate-45 bg-white" />
-              <span class="absolute bottom-1/3 h-0.5 w-full -translate-y-1 -rotate-45 bg-white" />
-            </div>
-          </button>
         </div>
       </div>
     </div>
