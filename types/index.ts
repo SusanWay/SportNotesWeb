@@ -4,6 +4,7 @@ export interface Workout {
 }
 export interface Training {
   name: string
-  approaches?: string
-  repetitions?: string
+  approaches?: number
+  repetitions?: number
+  weight?: number
 }

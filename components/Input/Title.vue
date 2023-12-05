@@ -1,17 +1,18 @@
 <script setup lang="ts">
+import { useField } from 'vee-validate'
+
 interface Props {
   text: string
+  name: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
-// Переменная, которая отвечает за контент внутри инпута
-const inputValue = ref('')
+const { value: inputValue } = useField(props.name)
 </script>
 
 <template>
   <div class="group relative">
-    <!-- validate-on-input используется, чтобы производить постоянную проверку валидации при первом ее провале -->
     <input
       v-model="inputValue"
       type="text"

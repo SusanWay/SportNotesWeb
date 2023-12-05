@@ -19,17 +19,7 @@ const isActive = ref(false)
     </div>
     <div v-if="isActive" class="flex flex-col">
       <div v-for="(training, index) in trainList" :key="index" class="flex flex-row items-center justify-between border-t border-white/25 py-3">
-        <div class="text-center text-white">
-          <p class="text-xl font-bold">
-            {{ training.name }}
-          </p>
-          <p class="font-title font-light">
-            {{ training.repetitions }} раз
-          </p>
-        </div>
-        <p class="text-3xl font-bold text-lime-light">
-          x{{ training.approaches }}
-        </p>
+        <TrainElement v-bind="training" />
       </div>
     </div>
   </div>

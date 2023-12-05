@@ -18,7 +18,7 @@ const component = computed(() => {
     :is="component"
     :to="to"
     :disabled="disabled"
-    class="inline-flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-lime px-7 font-title text-base font-extrabold uppercase text-white transition-colors duration-300 hover:bg-lime-light hover:text-black"
+    class="inline-flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-lime px-7 font-title text-base font-extrabold uppercase text-white transition-colors duration-300 hover:bg-lime-light hover:text-black disabled:border disabled:border-white/60 disabled:bg-gray-dark disabled:text-white/60"
     :class="{ 'w-full': block }"
   >
     <span :class="{ 'opacity-0': loading }">
