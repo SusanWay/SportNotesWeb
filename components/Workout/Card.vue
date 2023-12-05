@@ -22,6 +22,14 @@ const isActive = ref(false)
         <TrainElement v-bind="training" />
       </div>
     </div>
+    <div class="grid grid-cols-4 gap-1 border-t border-white/25 py-3">
+      <button class="col-span-3 inline-flex h-14 items-center justify-center gap-2.5 rounded-xl rounded-r bg-lime px-7 font-title text-base uppercase text-white">
+        Редактировать
+      </button>
+      <button class="rounded-lg rounded-l bg-red p-1.5" type="button">
+        <Icon size="36" name="Nav/Trash" class="mx-auto text-gray-dark" />
+      </button>
+    </div>
   </div>
 </template>
 
