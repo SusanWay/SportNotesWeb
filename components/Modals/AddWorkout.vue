@@ -57,7 +57,7 @@ function submitForm() {
       <form class="border-b border-white py-2.5" @submit.prevent="addTrain">
         <InputTitle class="mt-2.5" name="workoutName" text="Название тренировки" />
         <InputText class="mt-2.5" name="trainingName" text="Название упражнения" type="text" />
-        <InputText class="mt-2.5" name="trainingApproaches" text="Кол-во раз" type="number" />
+        <InputText class="mt-2.5" name="trainingApproaches" text="Кол-во подходов" type="number" />
         <InputText class="mt-2.5" name="trainingRepetitions" text="Кол-во повторов" type="number" />
         <Button class="mt-2.5 w-full" :disabled="!isEnabled" type="submit">
           отправить
@@ -68,7 +68,7 @@ function submitForm() {
           Упражнения
         </p>
         <div v-for="(training, index) in trainList" :key="index" class="mt-2.5 rounded-lg border border-white/25 p-3">
-          <TrainFormElement v-bind="training" />
+          <TrainFormElement v-bind="training" @delete="removeTrain(index)" />
         </div>
       </div>
     </div>

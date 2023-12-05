@@ -26,7 +26,7 @@ const isOpen = ref(false)
   </div>
   <div v-if="isOpen" class="mt-2.5 flex flex-col gap-2.5 border-t border-white/25 py-2.5 text-white">
     <p class="rounded-xl border border-white/25 p-3 text-xl">
-      Повторов: {{ approaches }}
+      Повторов: {{ repetitions }}
     </p>
     <p class="rounded-xl border border-white/25 p-3 text-xl">
       Подходов: {{ approaches }}
