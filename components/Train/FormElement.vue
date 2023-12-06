@@ -12,7 +12,7 @@ const isOpen = ref(false)
 
 <template>
   <div class="flex items-center justify-between text-white">
-    <p class="text-2xl font-bold">
+    <p class="max-w-[180px] break-words text-2xl font-bold">
       {{ name }}
     </p>
     <div class="flex gap-1.5">

@@ -15,20 +15,20 @@ const isActive = ref(false)
           {{ type }}
         </p>
       </div>
-      <Icon name="NavArrow/Right" size="34" class="my-auto text-lime-light" :class="{ 'rotate-90': isActive }" />
+      <Icon name="Nav/Arrow/Right" size="34" class="my-auto text-lime-light" :class="{ 'rotate-90': isActive }" />
     </div>
     <div v-if="isActive" class="flex flex-col">
       <div v-for="(training, index) in trainList" :key="index" class="flex flex-row items-center justify-between border-t border-white/25 py-3">
         <TrainElement v-bind="training" />
       </div>
-    </div>
-    <div class="grid grid-cols-4 gap-1 border-t border-white/25 py-3">
-      <button class="col-span-3 inline-flex h-14 items-center justify-center gap-2.5 rounded-xl rounded-r bg-lime px-7 font-title text-base uppercase text-white">
-        Редактировать
-      </button>
-      <button class="rounded-lg rounded-l bg-red p-1.5" type="button">
-        <Icon size="36" name="Nav/Trash" class="mx-auto text-gray-dark" />
-      </button>
+      <div class="grid grid-cols-4 gap-1 border-t border-white/25 py-3">
+        <button class="col-span-3 inline-flex h-14 items-center justify-center gap-2.5 rounded-xl rounded-r bg-lime px-7 font-title text-base uppercase text-white">
+          Редактировать
+        </button>
+        <button class="rounded-lg rounded-l bg-red p-1.5" type="button">
+          <Icon size="36" name="Nav/Trash" class="mx-auto text-gray-dark" />
+        </button>
+      </div>
     </div>
   </div>
 </template>

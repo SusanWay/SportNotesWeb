@@ -10,6 +10,7 @@ interface WorkoutForm {
   trainingApproaches: number
   trainingRepetitions: number
 }
+
 const vfm = useVfm()
 const { values } = useForm<WorkoutForm>()
 const workoutStore = useWorkoutStore()
@@ -45,8 +46,8 @@ function submitForm() {
     :click-to-close="false"
   >
     <div class="absolute inset-0 h-full overflow-auto px-5 py-7">
-      <button v-if="trainList.length" type="button" class="absolute left-6 top-6 z-10" @click="submitForm">
-        <Icon name="Nav/Save" size="32" class="text-lime-light" />
+      <button type="button" class="absolute left-6 top-6 z-10" :disabled="!trainList.length" @click="submitForm">
+        <Icon name="Nav/Save" size="32" :class="{ 'text-lime-light': trainList.length, 'text-white': !trainList.length }" />
       </button>
       <button type="button" class="absolute right-6 top-6 z-10" @click="vfm.close('addWorkout')">
         <div class="relative flex h-7 w-7">
@@ -60,7 +61,7 @@ function submitForm() {
         <InputText class="mt-2.5" name="trainingApproaches" text="Кол-во подходов" type="number" />
         <InputText class="mt-2.5" name="trainingRepetitions" text="Кол-во повторов" type="number" />
         <Button class="mt-2.5 w-full" :disabled="!isEnabled" type="submit">
-          отправить
+          Добавить Тренировку
         </Button>
       </form>
       <div class="mt-5">

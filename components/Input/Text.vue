@@ -25,7 +25,7 @@ const options = {
       multiple: true,
     },
     B: {
-      pattern: /[A-Za-zА-Яа-я]/,
+      pattern: /[A-Za-zА-Яа-я ]/,
       multiple: true,
     },
   },
