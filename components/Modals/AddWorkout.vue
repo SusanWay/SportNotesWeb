@@ -41,11 +41,10 @@ function submitForm() {
 <template>
   <VueFinalModal
     modal-id="addWorkout"
-    class="bg-gray-dark"
     :hide-overlay="true"
     :click-to-close="false"
   >
-    <div class="absolute inset-0 h-full overflow-auto px-5 py-7">
+    <div class="absolute inset-0 mx-auto h-full max-w-[640px] overflow-auto bg-gray-dark px-5 py-7">
       <button type="button" class="absolute left-6 top-6 z-10" :disabled="!trainList.length" @click="submitForm">
         <Icon name="Nav/Save" size="32" :class="{ 'text-lime-light': trainList.length, 'text-white': !trainList.length }" />
       </button>

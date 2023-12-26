@@ -16,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="px-4 py-5">
+  <div class="px-4">
     <!-- Список тренировок -->
     <p class="text-center text-3xl font-bold text-white">
       Мои тренировки
