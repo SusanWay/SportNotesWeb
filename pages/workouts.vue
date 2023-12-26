@@ -9,10 +9,9 @@ const intervalList = [
   { interval: 'week', text: 'Неделя' },
 ]
 
-onMounted(
-  async () => {
-    await workoutStore.getWorkouts(selectedInterval.value)
-  },
+onMounted(() => {
+  workoutStore.getWorkouts(1, selectedInterval.value)
+},
 )
 </script>
 
@@ -28,7 +27,7 @@ onMounted(
         :key="index"
         class="rounded-lg border border-white/25 px-4 py-2 text-white"
         :class="{ 'border-0 bg-lime': selectedInterval === interval.interval }"
-        @click="[selectedInterval = interval.interval, workoutStore.getWorkouts(selectedInterval)]"
+        @click="[selectedInterval = interval.interval, workoutStore.getWorkouts(1, selectedInterval)]"
       >
         {{ interval.text }}
       </button>

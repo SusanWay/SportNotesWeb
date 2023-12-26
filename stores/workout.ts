@@ -5,14 +5,18 @@ export const useWorkoutStore = defineStore('workoutStore', () => {
   const workoutList = ref<Workout[] | null>(null)
   const config = useRuntimeConfig()
   const apiURl = config.public.apiURL
-  async function getWorkouts(interval: string) {
-    const response = await fetch(`${apiURl}workouts/1?interval=${interval}`)
-    if (!response.ok)
-      return
-
-    workoutList.value = await response.json()
+  function getWorkouts(idUser: number, interval: string) {
+    fetch(`${apiURl}workouts/${idUser}?interval=${interval}`)
+      .then(async (response) => {
+        if (!response.ok)
+          throw new Error('Response not ok')
+        workoutList.value = await response.json()
+      })
+      .catch(() => {
+        workoutList.value = []
+      })
   }
-  async function postWorkout(workoutType: string, trainList: Training[]) {
+  function postWorkout(workoutType: string, trainList: Training[]) {
     const body = { type: workoutType, trainList }
     const requestBody = JSON.stringify(body)
 
@@ -26,10 +30,6 @@ export const useWorkoutStore = defineStore('workoutStore', () => {
       .then((response) => {
         if (!response.ok)
           throw new Error('Network response was not ok')
-      })
-      .then((data) => {
-        // Обработка успешного ответа от сервера
-        alert(`Успешно добавлено: ${JSON.stringify(data)}`)
       })
       .catch((error) => {
         // Обработка ошибок
